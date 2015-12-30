@@ -1,0 +1,125 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="HLC.master.vb" Inherits="HLConline.HLC" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Hospital Liasion Committee</title>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />   
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table cellpadding="2" cellspacing="0" width="100%" 
+        style="border-bottom-style: solid; border-bottom-color: #000000; border-bottom-width: 1px">
+        <tr>
+            <td bgcolor="Black" colspan="2">
+                <asp:Image ID="Image1" runat="server" BorderStyle="None" 
+                    ImageUrl="~/images/HLC_logo.jpg" />
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#ACBDDB">&nbsp;
+                <asp:Label ID="lblUserName" runat="server" CssClass="ContentText" 
+                    Text="Welcome John Doe!" Font-Bold="True"></asp:Label>
+            </td>
+            <td bgcolor="#ACBDDB" align="right">
+            <asp:HyperLink ID="lnkSignOut" NavigateUrl="SignOff.aspx" runat="server" Style="font-weight: bold; font-size: 8pt;
+                            color: black; font-family: Arial" Visible="true">Sign Off</asp:HyperLink>
+            </td>
+        </tr>
+    </table>
+    <div>
+    <table style="width: 100%" cellspacing="0" cellpadding="3">
+    <tr>
+    <td valign="top" 
+            style="width: 160px; background-color: #C0C0C0; height: 480px; border-right-style: solid; border-right-width: 1px; border-right-color: #000000;">
+    <br />
+        <table style="width: 100%">
+            <tr>
+            </tr>
+                <td>
+                    <asp:DropDownList ID="ddlSpecialty" runat="server" CssClass="DropDownDataEntry" Width="150px">
+                    </asp:DropDownList>                    
+                 </td>
+            <tr>
+                <td>
+                    <asp:DropDownList ID="ddlHospital" runat="server" CssClass="DropDownDataEntry" Width="150px">
+                    </asp:DropDownList>                    
+                </td>
+            </tr>
+            <tr>
+                <td align="center">                
+                    <asp:Label ID="lblFindDoctorError" runat="server" Text="Error message" 
+                        CssClass="LeftNavBoxError" Visible="False"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <asp:Button ID="btnFindDoctor" runat="server" Text="Find Doctors" CssClass="LeftNavBoxButton" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <asp:Menu ID="mnuMain" runat="server" BorderStyle="None" StaticDisplayLevels="2">
+            <StaticMenuStyle BackColor="#C0C0C0" />
+            <StaticMenuItemStyle BorderStyle="Solid" Font-Names="Tahoma" 
+              Font-Size="8pt" BorderWidth="1px" BorderColor="#C0C0C0" />
+            <DynamicMenuStyle BorderStyle="Outset" BorderWidth="1px" 
+              BorderColor="LightGray" BackColor="#C0C0C0"  CssClass="IE8Fix" />
+            <DynamicMenuItemStyle Font-Names="Tahoma" Font-Size="8pt" 
+              BorderStyle="Solid" BorderWidth="1px" BorderColor="#C0C0C0" />
+            <StaticHoverStyle BackColor="#ACBDDB" BorderStyle="Solid" 
+              BorderWidth="1px" BorderColor="DarkGray" />
+            <DynamicHoverStyle BackColor="#ACBDDB" BorderStyle="Solid" 
+              BorderWidth="1px" BorderColor="DarkGray" />
+            <StaticItemTemplate>
+              &nbsp;&nbsp;
+              <asp:Label ID="Label9" runat="server" ForeColor="Black" 
+                Font-Bold='<%# ( Not ( Eval ( "Selectable" ) ) ).ToString( ) %>'
+                Text='<%# Eval( "Text" ) %>'>
+              </asp:Label>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+            </StaticItemTemplate>              
+            <Items>
+                <asp:MenuItem Text="Doctors" Value="Doctors" Selectable="false">
+                    <asp:MenuItem Text="Browse Doctors" Value="BrowseDoctors" NavigateUrl="~/Browse/BrowseDoctors.aspx" ></asp:MenuItem>
+                    <asp:MenuItem Text="Add a New Doctor" Value="AddDoctor" NavigateUrl="~/Edit/EditDoctor.aspx"></asp:MenuItem>
+                </asp:MenuItem>
+                <asp:MenuItem Text="Practices" Value="Practices" Selectable="false">
+                    <asp:MenuItem Text="Browse Practices" Value="BrowsePractices" NavigateUrl="~/Browse/BrowsePractices.aspx" ></asp:MenuItem>
+                    <asp:MenuItem Text="Add a New Practice" Value="AddPractice" NavigateUrl="~/Edit/EditPractice.aspx"></asp:MenuItem>
+                </asp:MenuItem>
+                <asp:MenuItem Text="Hospitals" Value="Hospitals" Selectable="false">
+                    <asp:MenuItem Text="Browse Hospitals" Value="BrowseHospitals" NavigateUrl="~/Browse/BrowseHospitals.aspx" ></asp:MenuItem>
+                    <asp:MenuItem Text="Add a New Hospital" Value="AddHospital" NavigateUrl="~/Edit/EditHospital.aspx"></asp:MenuItem>
+                </asp:MenuItem>
+                <asp:MenuItem Text="PVG Members" Value="PVG" Selectable="false">
+                    <asp:MenuItem Text="Browse PVG Members" Value="BrowsePVG" NavigateUrl="~/Browse/BrowsePVG.aspx" ></asp:MenuItem>
+                    <asp:MenuItem Text="Add a New PVG Member" Value="AddPVG" NavigateUrl="~/Edit/EditPVG.aspx"></asp:MenuItem>
+                </asp:MenuItem>
+                <asp:MenuItem Text="Reports" Value="Reports" Selectable="false">
+                    <asp:MenuItem Text="Run a Report" Value="RunReport" NavigateUrl="" ></asp:MenuItem>
+                </asp:MenuItem>
+                <asp:MenuItem Text="Administration" Value="Admin" Selectable="false">
+                    <asp:MenuItem Text="Browse Users" Value="BrowseUsers" NavigateUrl="~/Browse/BrowseUsers.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Add a New User" Value="AddUser" NavigateUrl="~/Edit/EditUser.aspx" ></asp:MenuItem>
+                </asp:MenuItem>
+            </Items>
+        </asp:Menu>
+    
+    </td>
+    <td valign="top">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">    
+    </asp:ContentPlaceHolder>
+    </td>
+    </tr>
+    </table>
+    <center>
+        <asp:Label ID="lblDisclaimer" runat="server" Text="&copy; 2011, Hospital Liasion Committee.  All Rights Reserved." ForeColor="Gray" Font-Size="8pt"></asp:Label>
+    </center>
+    
+        
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+    "environmentSettings": {
+        "webSite": {
+            "name": "HLConline",
+            "location": "East US"
+        },
+        "databases": [
+            {
+                "connectionStringName": "DefaultConnection",
+                "databaseName": "HLConline_db",
+                "serverName": "quagv1i08c",
+                "user": "HLComm",
+                "password": "",
+                "edition": "",
+                "size": "",
+                "collation": "",
+                "location": "Central US"
+            }
+        ]
+    }
+}

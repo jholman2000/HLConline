@@ -1,0 +1,29 @@
+﻿body {
+}
+.login-div
+{
+    width: 360px;
+    height: 390px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    padding: 20px;
+    border-style:inset;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border: 2px solid Black;
+    box-shadow: 10px 10px 5px #000000;
+}
+.login-logo
+{
+    text-align: center;
+    width: 100%;
+    color: black;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px #aaaaaa;
+}

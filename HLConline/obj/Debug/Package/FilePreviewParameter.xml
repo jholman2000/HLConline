@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="HLConline" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\JeffHolmanData\\Dropbox\\HLConline\\HLConline\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\JeffHolmanData\\Dropbox\\HLConline\\HLConline\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DEV-Web.config Connection String" description="" value="Data Source=HOLMANLENOVO;Initial Catalog=DEV;User ID=sa;Password=nov071987" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\JeffHolmanData\\Dropbox\\HLConline\\HLConline\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DEV']/@connectionString" />
+  </parameter>
+  <parameter name="LOCAL-Web.config Connection String" description="" value="Data Source=HOLMANLENOVO;Initial Catalog=HLComm;User ID=sa;Password=nov071987" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\JeffHolmanData\\Dropbox\\HLConline\\HLConline\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='LOCAL']/@connectionString" />
+  </parameter>
+  <parameter name="PROD-Web.config Connection String" description="" value="Data Source=tcp:quagv1i08c.database.windows.net,1433;Initial Catalog=HLComm;User ID=HLComm@quagv1i08c;Password=HLCnoblood2015" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\JeffHolmanData\\Dropbox\\HLConline\\HLConline\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PROD']/@connectionString" />
+  </parameter>
+</parameters>
